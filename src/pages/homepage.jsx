@@ -1,7 +1,8 @@
 import React ,{Component} from 'react';
 import Header from '../component/header/header.component';
+import MainContainer from '../component/mainContainer/mainContainer.component';
+import Slider from '../component/slider/slider.component';
 import './homepage.styles.scss';
-// import { Component } from 'react';
 
 class Homepage extends Component {
     constructor(props) {
@@ -12,6 +13,9 @@ class Homepage extends Component {
         return (
             <div className="Homepage">
                 <Header></Header>
+                <MainContainer>
+                    <Slider></Slider>
+                </MainContainer>
             </div>
         );
     }

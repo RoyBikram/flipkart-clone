@@ -1,0 +1,2 @@
+const data = ['https://rukminim1.flixcart.com/flap/1688/280/image/03ec524462a46499.jpg?q=50', 'https://rukminim1.flixcart.com/flap/1688/280/image/584b33c8257fab31.jpg?q=50', 'https://rukminim1.flixcart.com/flap/1688/280/image/d65554f8fb5e936c.jpg?q=50', 'https://rukminim1.flixcart.com/flap/1688/280/image/edd92a583a985bac.jpg?q=50', 'https://rukminim1.flixcart.com/flap/1688/280/image/8665d26874eb0aac.jpg?q=50']
+export default data;
