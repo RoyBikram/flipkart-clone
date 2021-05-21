@@ -1,10 +1,11 @@
 import React from 'react';
-import './mainContainer.styles.scss'
+import { Container } from './mainContainer.styles.js';
+
 const MainContainer = ({children}) => {
     return (
-        <div className="MainContainer">
+        <Container>
             {children}
-        </div>
+        </Container>
      );
 }
 

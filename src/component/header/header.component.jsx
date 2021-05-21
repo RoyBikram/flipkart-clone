@@ -1,31 +1,31 @@
 import React from 'react';
-import './header.styles.scss';
-import DownArrow from './res/downArrow.svg'
+import ArrowIcon from './res/downArrow.svg'
 import CardIcon from './res/cardIcon.svg'
 import HeaderIcon from './res/headerIcon.png'
+import {HeaderContainer,HeaderItemsContainer,LeftSide,Img,Search,RightSide,ItemContainer,ArrowIconImg,CardIconImg} from './header.styles.js'
 
 const Header = () => {
     return (
-        <div className="Header">
-            <div className="HeaderItemsContainer">
-                <div className="LeftSide">
+        <HeaderContainer>
+            <HeaderItemsContainer>
+                <LeftSide>
                     <div className="MainIcon">
-                        <img src={HeaderIcon} alt="Flipkart Icon" />
+                        <Img src={HeaderIcon} alt="Flipkart Icon" />
                     </div>
-                    <div className="Search"></div>
-                </div>
-                <div className="RightSide">
-                    <div className="Name">Bikram
-                         <img className="DownArrow" src={DownArrow} alt=''/>
-                    </div>
-                    <div className="More">More
-                    <img className="DownArrow" src={DownArrow} alt=''/></div>
-                    <div className="Card">
-                    <img className="CardIcon" src={CardIcon} alt=''/>
-                        Card</div>
-                </div>
-            </div>
-        </div>
+                    <Search></Search>
+                </LeftSide>
+                <RightSide>
+                    <ItemContainer>Bikram
+                         <ArrowIconImg src={ArrowIcon} alt=''/>
+                    </ItemContainer>
+                    <ItemContainer>More
+                    <ArrowIconImg src={ArrowIcon} alt=''/></ItemContainer>
+                    <ItemContainer>
+                    <CardIconImg src={CardIcon} alt=''/>
+                        Card</ItemContainer>
+                </RightSide>
+            </HeaderItemsContainer>
+        </HeaderContainer>
      );
 }
  

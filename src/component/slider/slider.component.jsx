@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css"
@@ -16,10 +16,10 @@ const Slider = () => {
     return (
         <Swiper slidesPerView={1} spaceBetween={0} loop={true} navigation={true} className="mySwiper">
             {
-                data.map((each) => (
-                    <SwiperSlide>
-                <img src={each} alt="" srcset="" />
-            </SwiperSlide>
+                data.map((each,index) => (
+                    <SwiperSlide key={index}>
+                        <img src={each} alt="" />
+                    </SwiperSlide>
                 ))
             }
             </Swiper>
