@@ -1,12 +1,20 @@
-import React from 'react';
+import React,{Component} from 'react';
 import ArrowIcon from '../../res/downArrow.svg'
 import CardIcon from '../../res/cardIcon.svg'
 import HeaderIcon from '../../res/headerIcon.png'
 import {HeaderContainer,HeaderItemsContainer,LeftSide,Img,Search,RightSide,ItemContainer,ArrowIconImg,CardIconImg} from './header.styles.js'
+import CustomButton from '../customButton/customButton.component';
+// import { Component } from 'react';
 
-const Header = () => {
-    return (
-        <HeaderContainer>
+class Header extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { currentUser:null }
+    }
+    render() {
+        const { currentUser } = this.state;
+        return (
+            <HeaderContainer>
             <HeaderItemsContainer>
                 <LeftSide>
                     <div className="MainIcon">
@@ -15,9 +23,9 @@ const Header = () => {
                     <Search></Search>
                 </LeftSide>
                 <RightSide>
-                    <ItemContainer>Bikram
+                    {(currentUser)?<ItemContainer>Bikram
                          <ArrowIconImg src={ArrowIcon} alt=''/>
-                    </ItemContainer>
+                    </ItemContainer>:<CustomButton type={'login'} context={'Login'}></CustomButton>}
                     <ItemContainer>More
                     <ArrowIconImg src={ArrowIcon} alt=''/></ItemContainer>
                     <ItemContainer>
@@ -26,7 +34,17 @@ const Header = () => {
                 </RightSide>
             </HeaderItemsContainer>
         </HeaderContainer>
-     );
+         );
+    }
 }
  
 export default Header;
+
+
+// class Header () {
+//     return (
+        
+//      );
+// }
+ 
+// export default Header;
