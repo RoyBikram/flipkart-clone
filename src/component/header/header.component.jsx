@@ -1,7 +1,7 @@
 import React from 'react';
-import ArrowIcon from './res/downArrow.svg'
-import CardIcon from './res/cardIcon.svg'
-import HeaderIcon from './res/headerIcon.png'
+import ArrowIcon from '../../res/downArrow.svg'
+import CardIcon from '../../res/cardIcon.svg'
+import HeaderIcon from '../../res/headerIcon.png'
 import {HeaderContainer,HeaderItemsContainer,LeftSide,Img,Search,RightSide,ItemContainer,ArrowIconImg,CardIconImg} from './header.styles.js'
 
 const Header = () => {
