@@ -1,7 +1,8 @@
 import React from 'react';
 import CustomButton from '../CustomButton/CustomButtonComponent';
 import CustomInput from '../CustomInput/CustomInputComponent';
-import {SignupContainer, StyledForm,StyledSpan,GotoLoginPage} from './SignupStyles';
+import { SignupContainer, StyledForm, StyledSpan, GotoLoginPage } from './SignupStyles';
+import {auth,LoginWithGoogle} from '../../Firebase/Firebase.js';
 class Signup extends React.Component {
     constructor(props) {
         super(props);
@@ -9,7 +10,38 @@ class Signup extends React.Component {
             displayName: '',
             email: '',
             password: '',
-            conformPassword:''
+            confirmPassword:''
+        }
+    }
+
+    handleSubmit = async (event) => {
+        event.preventDefault()
+        const { displayName, email, password, confirmPassword } = this.state;
+        if (password !== confirmPassword) {
+            alert('The password is not match.')
+            return
+        }
+        try {
+            const { user } = await auth.createUserWithEmailAndPassword(email, password)
+            user.updateProfile({
+                displayName:displayName
+            })
+            this.setState({
+                displayName: '',
+                email: '',
+                password: '',
+                confirmPassword: ''
+            })
+        } catch (error) {
+            switch (error.code) {
+                case "auth/email-already-in-use":
+                    alert('You might have already an account on this email.')
+                    break;
+            
+                default:
+                    alert('Some network problem, Try little later.')
+                    break;
+            }
         }
     }
 
@@ -18,15 +50,26 @@ class Signup extends React.Component {
         this.setState({[name]:value})
     }
 
-    render() { 
+    handleLoginWithGoogle = async () => {
+        try {
+            const {user} = await LoginWithGoogle();
+            console.log(user);
+        } catch (error) {
+            console.log('Some network problem, Try little later.');
+        }
+        
+    }
+
+    render() {
+        const { displayName, email, password, confirmPassword } = this.state;
         return (
             <SignupContainer>
-                <StyledForm>
+                <StyledForm onSubmit={this.handleSubmit}>
                     <CustomInput
                         name='displayName'
                         type='text'
                         onChange = {this.handleChange}
-                        value={this.state.displayName}
+                        value={displayName}
                         label='Enter Full Name'
                         required
                     />
@@ -34,7 +77,7 @@ class Signup extends React.Component {
                         name='email'
                         type='email'
                         onChange = {this.handleChange}
-                        value={this.state.email}
+                        value={email}
                         label='Enter Email'
                         required
                     />
@@ -42,21 +85,21 @@ class Signup extends React.Component {
                         name='password'
                         type='password'
                         onChange = {this.handleChange}
-                        value={this.state.password}
+                        value={password}
                         label='Set Password'
                         required
                     />
                     <CustomInput
-                        name='conformPassword'
+                        name='confirmPassword'
                         type='password'
                         onChange = {this.handleChange}
-                        value={this.state.conformPassword}
-                        label='Conform Password'
+                        value={confirmPassword}
+                        label='Confirm Password'
                         required
                     />
                     <CustomButton type='submit' styleOf={'ORANGEBUTTON'} >Signup</CustomButton>
                     <StyledSpan>OR</StyledSpan>
-                    <CustomButton type='button' styleOf={'AUTHWITHGOOGLE'}>Signup with Google</CustomButton>
+                    <CustomButton type='button' onClick={this.handleLoginWithGoogle} styleOf={'AUTHWITHGOOGLE'}>Signup with Google</CustomButton>
                 </StyledForm>
                 <GotoLoginPage onClick={this.props.GotoLogin}>Existing User? Log in</GotoLoginPage>
             </SignupContainer>
