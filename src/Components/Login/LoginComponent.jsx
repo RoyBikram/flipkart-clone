@@ -2,7 +2,8 @@ import React from 'react';
 import CustomInput from '../CustomInput/CustomInputComponent';
 import {LoginContainer,StyledForm,Terms,StyledSpan,GotoSignupPage} from './LoginStyles';
 import CustomButton from '../CustomButton/CustomButtonComponent';
-import {auth,LoginWithGoogle} from '../../Firebase/Firebase';
+import { auth, LoginWithGoogle } from '../../Firebase/Firebase';
+import {connect} from 'react-redux';
 class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -16,7 +17,8 @@ class Login extends React.Component {
         event.preventDefault()
         const { email, password } = this.state;
         try {
-            const {user} = await auth.signInWithEmailAndPassword(email,password)
+            await auth.signInWithEmailAndPassword(email, password)
+            this.props.ToggleAuthPopup()
         } catch (error) {
             switch (error.code) {
                 case "auth/wrong-password":
@@ -33,8 +35,8 @@ class Login extends React.Component {
     }
     handleLoginWithGoogle = async () => {
         try {
-            const { user } = await LoginWithGoogle();
-            console.log(user);
+            await LoginWithGoogle();
+            this.props.ToggleAuthPopup()
         } catch (error) {
             console.log('Your internet connection is not consistent, Please try little bit later.');
         }
@@ -71,5 +73,9 @@ class Login extends React.Component {
          );
     }
 }
- 
-export default Login;
+
+const mapDispatchToProps = (Dispatch) => ({
+    ToggleAuthPopup:() => {Dispatch({type:'TOGGLEAUTHPOPUP'})}
+})
+export default connect(null,mapDispatchToProps)(Login);
+

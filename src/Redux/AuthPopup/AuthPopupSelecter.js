@@ -1,0 +1,1 @@
+export const AuthPopupSelecter = (state) => (state.AuthPopup.displayAuthPopup)

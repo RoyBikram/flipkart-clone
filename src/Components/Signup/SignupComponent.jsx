@@ -2,7 +2,8 @@ import React from 'react';
 import CustomButton from '../CustomButton/CustomButtonComponent';
 import CustomInput from '../CustomInput/CustomInputComponent';
 import { SignupContainer, StyledForm, StyledSpan, GotoLoginPage } from './SignupStyles';
-import {auth,LoginWithGoogle} from '../../Firebase/Firebase.js';
+import { auth, LoginWithGoogle } from '../../Firebase/Firebase.js';
+import {connect} from 'react-redux';
 class Signup extends React.Component {
     constructor(props) {
         super(props);
@@ -32,6 +33,7 @@ class Signup extends React.Component {
                 password: '',
                 confirmPassword: ''
             })
+            this.props.ToggleAuthPopup()
         } catch (error) {
             switch (error.code) {
                 case "auth/email-already-in-use":
@@ -54,6 +56,7 @@ class Signup extends React.Component {
         try {
             const {user} = await LoginWithGoogle();
             console.log(user);
+            this.props.ToggleAuthPopup()
         } catch (error) {
             console.log('Some network problem, Try little later.');
         }
@@ -106,5 +109,8 @@ class Signup extends React.Component {
          );
     }
 }
- 
-export default Signup;
+
+const mapDispatchToProps = (Dispatch) => ({
+    ToggleAuthPopup:() => {Dispatch({type:'TOGGLEAUTHPOPUP'})}
+})
+export default connect(null,mapDispatchToProps)(Signup);

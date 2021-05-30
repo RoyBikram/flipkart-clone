@@ -5,26 +5,19 @@ import headerIconImg from '../../Res/headerIcon.png'
 import {HeaderContainer,HeaderItemsContainer,LeftSide,Img,Search,RightSide,ItemContainer,ArrowIconImg,CardIconImg} from './HeaderStyles.js'
 import CustomButton from '../CustomButton/CustomButtonComponent';
 import AuthPopup from '../AuthPopup/AuthPopupComponent.jsx';
+import { connect } from 'react-redux';
+import { AuthPopupSelecter } from '../../Redux/AuthPopup/AuthPopupSelecter';
+import UserSelecter from '../../Redux/User/UserSelecter';
 
 class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentUser: null,
-            displayAuthPopup: false
         }
     }
 
-    ToggleAuthPopup = () => {
-        this.setState(
-            (currentState) => ({
-                ...currentState,
-                displayAuthPopup:!currentState.displayAuthPopup
-            })
-        )
-    }
     render() {
-        const { currentUser,displayAuthPopup } = this.state;
+        const { displayAuthPopup, ToggleAuthPopup,currentUser } = this.props;
         return (
             <HeaderContainer>
             <HeaderItemsContainer>
@@ -35,9 +28,9 @@ class Header extends Component {
                     <Search></Search>
                 </LeftSide>
                 <RightSide>
-                    {(currentUser)?<ItemContainer>Bikram
+                    {(currentUser)?<ItemContainer>{currentUser.displayName}
                          <ArrowIconImg src={downArrowImg} alt=''/>
-                        </ItemContainer> : <CustomButton styleOf={'HEADERLOGIN'} onClick={this.ToggleAuthPopup}>Login</CustomButton>}
+                        </ItemContainer> : <CustomButton styleOf={'HEADERLOGIN'} onClick={ToggleAuthPopup}>Login</CustomButton>}
                     <ItemContainer>More
                     <ArrowIconImg src={downArrowImg} alt=''/></ItemContainer>
                     <ItemContainer>
@@ -45,10 +38,17 @@ class Header extends Component {
                         Card</ItemContainer>
                 </RightSide>
                 </HeaderItemsContainer>
-                {(displayAuthPopup)?<AuthPopup ToggleAuthPopup ={this.ToggleAuthPopup}></AuthPopup>:null}
+                {(displayAuthPopup)?<AuthPopup ToggleAuthPopup ={ToggleAuthPopup}></AuthPopup>:null}
             </HeaderContainer>
          );
     }
 }
 
-export default Header;
+const mapStateToProps = (state) => ({
+    displayAuthPopup: AuthPopupSelecter(state),
+    currentUser: UserSelecter(state) 
+})
+const mapDispatchToProps = (Dispatch) => ({
+    ToggleAuthPopup:() => {Dispatch({type:'TOGGLEAUTHPOPUP'})}
+})
+export default connect(mapStateToProps,mapDispatchToProps)(Header);

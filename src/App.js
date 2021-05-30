@@ -1,14 +1,40 @@
 import './App.css';
+import React, { Component } from 'react';
 import Homepage from './Pages/HomePage';
 import Header from './Components/Header/HeaderComponent';
+import { SetUserAction } from './Redux/User/UserAction';
+import {connect} from 'react-redux';
+import {auth} from './Firebase/Firebase';
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {  }
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <Header></Header>
-      <Homepage></Homepage>
-    </div>
-  );
+  unSubcribeFromAuth = null;
+
+  componentDidMount() {
+    const { SetCurrentUser } = this.props;
+    this.unSubcribeFromAuth = auth.onAuthStateChanged(async user => {
+      SetCurrentUser(user);
+    })
+  }
+
+  componentWillUnmount() {
+    this.unSubcribeFromAuth()
+  }
+  
+  render() { 
+    return (
+      <div className="App">
+        <Header></Header>
+        <Homepage></Homepage>
+      </div>
+     );
+  }
 }
-
-export default App;
+ 
+const mapDispatchToProps = dispatch => ({
+  SetCurrentUser: user => dispatch(SetUserAction(user))
+})
+export default connect(null,mapDispatchToProps)(App);
