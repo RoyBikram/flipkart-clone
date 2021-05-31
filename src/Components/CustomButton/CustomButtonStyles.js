@@ -28,6 +28,13 @@ ${
                     color: white ;`
                 )
             }
+            case 'NOBACKGROUND': {
+                return (
+                    `background-color: transparent;
+                    height: 48px;
+                    color: white ;`
+                )
+            }
             default:
                 break;
         }
@@ -43,5 +50,7 @@ cursor: pointer;
 `
 
 export const Context = styled.span`
-/* transform: translateY(-10%); */
+display: flex;
+flex-direction: row;
+align-items: center;
 `

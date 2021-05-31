@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import downArrowImg from '../../Res/downArrow.svg'
 import cardIconImg from '../../Res/cardIcon.svg'
 import headerIconImg from '../../Res/headerIcon.png'
-import {HeaderContainer,HeaderItemsContainer,LeftSide,Img,Search,RightSide,ItemContainer,ArrowIconImg,CardIconImg} from './HeaderStyles.js'
+import powerIcon from '../../Res/powerIcon.svg';
+import {HeaderContainer,HeaderItemsContainer,LeftSide,Img,Search,RightSide,ItemContainer,IconImg} from './HeaderStyles.js'
 import CustomButton from '../CustomButton/CustomButtonComponent';
 import AuthPopup from '../AuthPopup/AuthPopupComponent.jsx';
 import { connect } from 'react-redux';
 import { AuthPopupSelecter } from '../../Redux/AuthPopup/AuthPopupSelecter';
-import UserSelecter from '../../Redux/User/UserSelecter';
+import { UserSelecter } from '../../Redux/User/UserSelecter';
+import {auth} from '../../Firebase/Firebase';
 
 class Header extends Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class Header extends Component {
         this.state = {
         }
     }
-
+    getDisplayName = (currentUser) => (currentUser.displayName.split(' ')[0])
     render() {
         const { displayAuthPopup, ToggleAuthPopup,currentUser } = this.props;
         return (
@@ -28,13 +29,13 @@ class Header extends Component {
                     <Search></Search>
                 </LeftSide>
                 <RightSide>
-                    {(currentUser)?<ItemContainer>{currentUser.displayName}
-                         <ArrowIconImg src={downArrowImg} alt=''/>
-                        </ItemContainer> : <CustomButton styleOf={'HEADERLOGIN'} onClick={ToggleAuthPopup}>Login</CustomButton>}
-                    <ItemContainer>More
-                    <ArrowIconImg src={downArrowImg} alt=''/></ItemContainer>
+                         {(currentUser)? [<ItemContainer key="1">{`Hi ${this.getDisplayName(currentUser)}`}</ItemContainer>,
+                            <CustomButton key='2' styleOf={'NOBACKGROUND'} onClick={() => { auth.signOut() }}>
+                                <IconImg src={powerIcon} alt=''/>
+                                Logout</CustomButton>] : (<CustomButton styleOf={'HEADERLOGIN'} onClick={ToggleAuthPopup}>Login</CustomButton>)
+                        }
                     <ItemContainer>
-                    <CardIconImg src={cardIconImg} alt=''/>
+                    <IconImg src={cardIconImg} alt=''/>
                         Card</ItemContainer>
                 </RightSide>
                 </HeaderItemsContainer>

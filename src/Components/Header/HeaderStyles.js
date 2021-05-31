@@ -37,7 +37,7 @@ export const Search = styled.div`
 export const RightSide = styled.div`
     display: flex;
     flex-direction: row;
-    width: 30%;
+    width: 35%;
     align-items: center;
     justify-content: space-evenly;
     margin-right: 20px;
@@ -58,6 +58,9 @@ export const ArrowIconImg = styled.img`
     transform: rotate(270deg);
 `
 
-export const CardIconImg = styled.img`
+export const IconImg = styled.img`
 margin: 5px;
+height: 15px;
+width: 15px;
+
 `
