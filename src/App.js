@@ -5,6 +5,7 @@ import Header from './Components/Header/HeaderComponent';
 import { SetUserAction } from './Redux/User/UserAction';
 import {connect} from 'react-redux';
 import {auth} from './Firebase/Firebase';
+import Footer from './Components/Footer/FooterComponent';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -29,6 +30,7 @@ class App extends Component {
       <div className="App">
         <Header></Header>
         <Homepage></Homepage>
+        <Footer></Footer>
       </div>
      );
   }
