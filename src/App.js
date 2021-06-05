@@ -1,9 +1,11 @@
 import './App.css';
 import React, { Component } from 'react';
 import Homepage from './Pages/HomePage';
+import CategoryPage from './Pages/CategoryPage/CategoryPage';
 import Header from './Components/Header/HeaderComponent';
 import { SetUserAction } from './Redux/User/UserAction';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import {Route,Switch} from 'react-router-dom';
 import {auth} from './Firebase/Firebase';
 import Footer from './Components/Footer/FooterComponent';
 class App extends Component {
@@ -29,7 +31,10 @@ class App extends Component {
     return (
       <div className="App">
         <Header></Header>
-        <Homepage></Homepage>
+        <Switch>
+          <Route exact path='/' component={Homepage}/>
+          <Route exact path='/categorypage' component={CategoryPage}/>
+        </Switch>
         <Footer></Footer>
       </div>
      );

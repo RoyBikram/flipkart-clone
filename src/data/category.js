@@ -1,4 +1,4 @@
-const CataObj = {
+const CateObj = {
     "Clothing": {
         "image": "https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100",
         "products": [
@@ -379,7 +379,7 @@ const CataObj = {
         ]
     },
     "Footwear": {
-        "image": "https://rukminim1.flixcart.com/image/150/150/k5bcscw0pkrrdj/shoe/f/6/d/9-combo-4-1154-5014-1138-1216-world-wear-footwear-original-imafzffcchzhdmzq.jpeg?q=70",
+        "image": "https://rukminim1.flixcart.com/image/200/200/k0flmkw0/shoe/n/f/d/8595118-7-bata-red-original-imafk87fha2uzpsj.jpeg?q=70",
         "products": [
             "f449ec65dcbc041b6ae5e6a32717d01b",
             "29c8d290caa451f97b1c32df64477a2c",
@@ -1191,4 +1191,4 @@ const CataObj = {
         ]
     }
 }
-export default CataObj;
+export default CateObj;
