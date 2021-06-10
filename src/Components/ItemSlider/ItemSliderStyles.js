@@ -27,8 +27,8 @@ border: none;
 font-size: 14px;
 padding: 10px 20px;
 `
-export const MainSlider = styled.div`
-height: 262px;
-width: 100%;
-background-color: white;
-`
+// export const MainSlider = styled.div`
+// height: 262px;
+// width: 100%;
+// background-color: white;
+// `

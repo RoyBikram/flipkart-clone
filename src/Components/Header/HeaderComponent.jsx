@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { AuthPopupSelecter } from '../../Redux/AuthPopup/AuthPopupSelecter';
 import { UserSelecter } from '../../Redux/User/UserSelecter';
 import {auth} from '../../Firebase/Firebase';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
     constructor(props) {
@@ -23,9 +24,11 @@ class Header extends Component {
             <HeaderContainer>
             <HeaderItemsContainer>
                 <LeftSide>
-                    <div className="MainIcon">
+                        <Link to='/'>
+                        <div className="MainIcon">
                         <Img src={headerIconImg} alt="Flipkart Icon" />
-                    </div>
+                        </div>
+                        </Link>
                     <Search></Search>
                 </LeftSide>
                 <RightSide>

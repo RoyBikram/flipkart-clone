@@ -1844,63 +1844,6 @@ const Product = {
             ]
         }
     },
-    "e71017e224688489edfe856f2308806d": {
-        "uniq_id": "e71017e224688489edfe856f2308806d",
-        "product_name": "Indcrown Net Embroidered Semi-stitched Lehenga Choli Material",
-        "product_category_tree": {
-            "Clothing": "Women's Clothing"
-        },
-        "retail_price": "999",
-        "discounted_price": "699",
-        "image": [
-            "http://img5a.flixcart.com/image/fabric/h/k/a/r-c-lehe-bt-indcrown-1000x1000-imaejbczsqzjrbfd.jpeg",
-            "http://img5a.flixcart.com/image/fabric/h/k/a/r-c-lehe-bt-indcrown-original-imaejbczsqzjrbfd.jpeg",
-            "http://img6a.flixcart.com/image/fabric/h/k/a/r-c-lehe-bt-indcrown-original-imaejbczsqwbk8yz.jpeg",
-            "http://img5a.flixcart.com/image/fabric/h/k/a/r-c-lehe-bt-indcrown-original-imaejbczy6tcpa3x.jpeg",
-            "http://img5a.flixcart.com/image/fabric/u/g/e/w-nd-black-lehe-bt-indcrown-original-imaejbczrdg3464f.jpeg"
-        ],
-        "description": "Key Features of Indcrown Net Embroidered Semi-stitched Lehenga Choli Material Ghagra Choli , Ghagra, Choli, Dupatta Set , Lehenga Choli , Lehenga, Choli and Dupatta Set .,Indcrown Net Embroidered Semi-stitched Lehenga Choli Material (Semi-stitched) Price: Rs. 699 We have not authorised any other seller to sell our brand Indcrown . Any seller doing so is selling fake Indcrown Products. Buy original Indcrown products from the seller \" indcrown‘’ only,Specifications of Indcrown Net Embroidered Semi-stitched Lehenga Choli Material (Semi-stitched) Fabric Details Fabric Net Type Semi-stitched Lehenga Choli Material General Details Pattern Embroidered Ideal For Women's Color Multicolor Fabric Care Dry clean or else Normal Hand Wash Additional Details Other Details Lehnga Choli is an Indian traditional ware also known as Chaniya Choli. We at Bolly Lounge offers you to attract compliments by this attractive Lehnga Choli made with fine quality material and beautiful work which can be worn for functions, festivals, parties and even office also. This Lehnga Choli ...View More Lehnga Choli is an Indian traditional ware also known as Chaniya Choli. We at Bolly Lounge offers you to attract compliments by this attractive Lehnga Choli made with fine quality material and beautiful work which can be worn for functions, festivals, parties and even office also. This Lehnga Choli is comes with unstitched material so it can be stitched according to your taste and preference. Stunning Self Designed Partywear Salwar Suit Gives A Trendy Look. Suit Having Fine Embroidery Work Over All. A Fine Fabric Used To Make It, It Will Be Comfortable In All Season. Style Code R C Lehe Bt In the Box 1 Lehenga Choli And Duppta Set",
-        "product_rating": 3,
-        "brand": "Indcrown",
-        "product_specifications": {
-            "product_specification": [
-                {
-                    "key": "Fabric",
-                    "value": "Net"
-                },
-                {
-                    "key": "Type",
-                    "value": "Semi-stitched Lehenga Choli Material"
-                },
-                {
-                    "key": "Pattern",
-                    "value": "Embroidered"
-                },
-                {
-                    "key": "Ideal For",
-                    "value": "Women's"
-                },
-                {
-                    "key": "Color",
-                    "value": "Multicolor"
-                },
-                {
-                    "value": "Dry clean or else Normal Hand Wash"
-                },
-                {
-                    "key": "Other Details",
-                    "value": "Lehnga Choli is an Indian traditional ware also known as Chaniya Choli. We at Bolly Lounge offers you to attract compliments by this attractive Lehnga Choli made with fine quality material and beautiful work which can be worn for functions, festivals, parties and even office also. This Lehnga Choli ...View More Lehnga Choli is an Indian traditional ware also known as Chaniya Choli. We at Bolly Lounge offers you to attract compliments by this attractive Lehnga Choli made with fine quality material and beautiful work which can be worn for functions, festivals, parties and even office also. This Lehnga Choli is comes with unstitched material so it can be stitched according to your taste and preference. Stunning Self Designed Partywear Salwar Suit Gives A Trendy Look. Suit Having Fine Embroidery Work Over All. A Fine Fabric Used To Make It, It Will Be Comfortable In All Season."
-                },
-                {
-                    "key": "Style Code",
-                    "value": "R C Lehe Bt"
-                },
-                {
-                    "value": "1 Lehenga Choli And Duppta Set"
-                }
-            ]
-        }
-    },
     "6286847ee2da18f587503db49511c539": {
         "uniq_id": "6286847ee2da18f587503db49511c539",
         "product_name": "Shopmania Music Band A5 Notebook Spiral Bound",
@@ -2053,7 +1996,7 @@ const Product = {
     },
     "ea2406dc597bee2abb6b867fa668501f": {
         "uniq_id": "ea2406dc597bee2abb6b867fa668501f",
-        "product_name": "Tiara Diaries 2016-2017 Designer LA Kaarta \"TAKING ACTION GETTING RESULT\" (Set of 3) B5 Notebook Hard Bound",
+        "product_name": "Tiara Diaries 2016-2017",
         "product_category_tree": {
             "Pens & Stationery": "Diaries & Notebooks"
         },

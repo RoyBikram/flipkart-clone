@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
 export const CategoryItemContainer = styled.div`
-width: 100%;
-height: 300px;
+width: 190px;
+height: 265px;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-box-shadow: 0px 0px 7px 1px #d8d8d8;
 transition: 500ms;
 position: relative;
 padding: 30px 30px 50px 30px;
@@ -27,4 +26,5 @@ font-weight: 500;
 position: absolute;
 bottom: 20px;
 text-align: center;
+padding: 0px 10px;
 `

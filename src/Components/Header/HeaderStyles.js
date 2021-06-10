@@ -50,7 +50,6 @@ export const ItemContainer = styled.div`
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     font-size: 16px;
-    width: 60px;
     height: 36px;
 `
 export const ArrowIconImg = styled.img`

@@ -1,7 +1,9 @@
 import './App.css';
+import product from './Data/product';
 import React, { Component } from 'react';
 import Homepage from './Pages/HomePage';
 import CategoryPage from './Pages/CategoryPage/CategoryPage';
+import ProductPage from './Pages/ProductPage/ProductPageComponent';
 import Header from './Components/Header/HeaderComponent';
 import { SetUserAction } from './Redux/User/UserAction';
 import { connect } from 'react-redux';
@@ -27,13 +29,15 @@ class App extends Component {
     this.unSubcribeFromAuth()
   }
   
-  render() { 
+  render() {
     return (
       <div className="App">
         <Header></Header>
         <Switch>
           <Route exact path='/' component={Homepage}/>
           <Route exact path='/categorypage' component={CategoryPage}/>
+          <Route exact path='/productpage' render={() => (<ProductPage productData={Object.keys(product).slice(0,30)}></ProductPage>)}/>
+          <Route exact path='/categorypage/:pageid' component={ProductPage}/>
         </Switch>
         <Footer></Footer>
       </div>

@@ -14,7 +14,6 @@ const CateObj = {
             "bb41283056536d7af11e994ba4f9db81",
             "171e0bcea390c17fd70e3ffa6c2cd187",
             "a60ebb7803c6a31795de3f8949cb6f98",
-            "e71017e224688489edfe856f2308806d",
             "5935ed077915347dc695744df68c565c",
             "b9b183aa18d3a721d2ac23e7184525b0",
             "595f55f2c1293f07ea9ec9fa2bb39f46",

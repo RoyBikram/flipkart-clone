@@ -8,7 +8,7 @@ font-weight: 500;
 text-align: center;
 border-bottom: #c2c2c2 solid 1px;
 `
-export const CategoryItemContainer = styled.div`
+export const ProductItemContainer = styled.div`
 max-width: 1000px;
 width: 100%;
 margin-left: auto;
